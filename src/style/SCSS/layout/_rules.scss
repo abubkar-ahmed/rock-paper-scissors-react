@@ -1,0 +1,100 @@
+.rules-div{
+    .rules{
+        background-color: transparent;
+        color: white;
+        border: 2px solid $Header-outline;
+        padding: 0.7rem 1.7rem;
+        border-radius: 0.7rem;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 700;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        transform: translate(-50%, -50%);
+    }
+    .full-width{
+        backdrop-filter: blur(5px);
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .ruls-container{
+            background-color: white;
+            width: fit-content;
+            padding: 2rem;
+            border-radius: 0.8rem;
+            position: relative;
+            h1{
+                color: $Dark-text;
+                margin-bottom: 1.5rem;
+            }
+            .close {
+                position: absolute;
+                right: 35px;
+                top: 35px;
+                width: 35px;
+                height: 35px;
+                opacity: 0.6;
+                cursor: pointer;
+              }
+              .close:hover {
+                opacity: 1;
+              }
+              .close:before, .close:after {
+                position: absolute;
+                left: 15px;
+                content: ' ';
+                height: 28px;
+                width: 2px;
+                background-color: #333;
+              }
+              .close:before {
+                transform: rotate(45deg);
+              }
+              .close:after {
+                transform: rotate(-45deg);
+              }
+        }
+    }
+    .display-none{
+        display: none;
+    }
+}
+//-----------------------------------------------------------
+// @include mobile{
+  @media (max-width:1024px) {
+    .rules-div{
+      .rules{
+        width: fit-content;
+        bottom: 2%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .full-width{
+        .ruls-container{
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            padding-top: 5rem;
+            border-radius: 0;
+            h1{
+                margin-bottom: 8rem;
+            }
+            .close {
+                top: 90%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+              }
+        }
+    }
+    }
+  }
+
+// }

@@ -1,0 +1,410 @@
+main {
+    width: 50%;
+    margin:  auto;
+    margin-top: 5rem;
+    .sec-1{
+        width: 22rem;
+        min-height: 22rem;
+        margin: auto;
+        background: url('./images/bg-triangle.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: relative;
+        .paper,.rock,.scissors{
+            background-color: white;
+            width: fit-content;
+            border-radius: 50%;
+            position: absolute;
+            width: 9.5rem;
+            height: 9.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            animation-duration: 0.9s;
+            animation-direction: alternate;
+            div{
+                background-color: white;
+                width: 7rem;
+                height: 7rem;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: inset 0px 8px 0 #8080805e;
+            }
+            img{
+                background-color: white;
+            }
+        }
+        .paper {
+            top: -2rem;
+            left: -2rem;
+            background-color: hsl(230, 89%, 62%);
+            box-shadow: 0 8px 0 #2f42a1;
+            animation-name: from-center-paper;
+        }
+        .rock{
+            top: -2rem;
+            right: -2rem;
+            background-color: hsl(349, 71%, 52%);
+            box-shadow: 0 8px 0 #952035;
+            animation-name: from-center-rock;
+        }
+        .scissors{
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 0) ;
+            background-color: hsl(39, 89%, 49%);
+            box-shadow: 0 8px 0 #835707;
+            animation-name: from-center-scissors;
+        }
+    }
+}
+//-----------------------------------------------------
+@include mobile{
+    main{
+        width: 100%;
+        margin-top: 4rem;
+        .sec-1{
+            width: 18rem;
+            height: 18rem;
+            .paper,.rock,.scissors{
+                width: 7.5rem;
+                height: 7.5rem;
+                div{
+                    width: 5.5rem;
+                    height: 5.5rem;
+                }
+            }
+            .paper{
+                left: 0rem;
+            }
+            .rock{
+                right: -1rem;
+            }
+            .scissors{
+                bottom: 5rem;
+                left: 50%;
+                transform: translate(-50%, 0%) ;
+            }
+        }
+    }
+}
+//------------------------------------------------------------
+@include tablets {
+    main{
+        width: 100%;
+        .sec-1{
+            width: 20rem;
+            height: 20rem;
+            .paper,.rock,.scissors{
+                width: 7.5rem;
+                height: 7.5rem;
+                div{
+                    width: 5.5rem;
+                    height: 5.5rem;
+                }
+            }
+            .paper{
+                left: 0rem;
+            }
+            .rock{
+                right: -1rem;
+            }
+            .scissors{
+                bottom: 4rem;
+                left: 50%;
+                transform: translate(-50%, 0%) ;
+            }
+        }
+    }
+}
+//---------------------------------------------------
+main{
+    .sec-2{
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        margin: auto;
+        .your-pick,.house-pick {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            h2{
+                color: white;
+                text-transform: uppercase;  
+                font-size: 1.3rem;
+                font-weight: 700;
+            }
+        }
+        .your-pick{
+            order: 1;
+            width: 30%;
+        }
+        .status{
+            order: 2;
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 0.7rem;
+            
+            h2{
+                color: white;
+                font-size: 2rem;
+            }
+            button{
+                padding: 0.6rem 1.5rem;
+                border: none;
+                cursor: pointer;
+                font-size: 0.8rem;
+                color: $Dark-text;
+                font-weight: 700;
+                letter-spacing: 0.1rem;
+                border-radius: 0.4rem;
+            }
+        }
+        .house-pick{
+            order: 3;
+            width: 30%;
+            
+        }
+        .paper,.rock,.scissors{
+            background-color: white;
+            border-radius: 50%;
+            width: 12rem;
+            height: 12rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+            div{
+                background-color: white;
+                width: 9.5rem;
+                height: 9.5rem;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: inset 0px 8px 0 #8080805e;
+            }
+            img{
+                background-color: white;
+                width: 50%;
+            }
+        }
+        .paper {
+            background-color: hsl(230, 89%, 62%);
+            box-shadow: 0 8px 0 #2f42a1;
+        }
+        .rock{
+            background-color: hsl(349, 71%, 52%);
+            box-shadow: 0 8px 0 #952035;
+        }
+        .scissors{
+            background-color: hsl(39, 89%, 49%);
+            box-shadow: 0 8px 0 #835707;
+        }
+        .holding{
+            width: 12rem;
+            height: 12rem;
+            border-radius: 50%;
+            background-color: hsl(237, 49%, 15%);
+        }
+        .span-1,.span-2{
+            border-radius: 50%;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation-name: circle;
+            animation-duration: 0.9s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        .span-1{
+            transform: scale(1.3,1.3);
+            z-index: -1;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        .span-2{
+            transform: scale(1.7,1.7);
+            z-index: -2;
+            background-color: rgba(255, 255, 255, 0.03);
+            animation-delay: 0.2s;
+        }
+    }
+}
+//-----------------------------------------
+@include mobile {
+    main{
+        .sec-2{
+            display: grid;
+            grid-template-columns: 45% 45%;
+            grid-template-rows: 50% 50%;
+            gap: 4rem;
+            row-gap: 3rem;
+            .your-pick,.house-pick{
+                flex-direction: column-reverse;
+                width: 100%;
+                h2{
+                    font-size: 1.1rem;
+                }
+            }
+            .your-pick{
+                grid-column: 1;
+                grid-row: 1;
+            }
+            .house-pick{
+                grid-column: 2;
+                grid-row: 1;
+            }
+            .status{
+                grid-column: 1 / 3;
+                grid-row: 2;
+                width: 100%;
+            }
+            .paper,.rock,.scissors,.holding{
+                width: 7.5rem;
+                height: 7.5rem;
+                padding: 1rem;
+                div{
+                    width: 5.5rem;
+                    height: 5.5rem;
+                }
+
+            }
+        }
+
+    }
+}
+//------------------------------------------------------
+@include tablets {
+    main{
+        .sec-2{
+            display: grid;
+            grid-template-columns: 45% 45%;
+            grid-template-rows: 50% 50%;
+            gap: 0rem;
+            row-gap: 3rem;
+            .your-pick,.house-pick{
+                flex-direction: column-reverse;
+                width: 100%;
+                h2{
+                    font-size: 1.1rem;
+                }
+            }
+            .your-pick{
+                grid-column: 1;
+                grid-row: 1;
+            }
+            .house-pick{
+                grid-column: 2;
+                grid-row: 1;
+            }
+            .status{
+                grid-column: 1 / 3;
+                grid-row: 2;
+                width: 100%;
+            }
+            .paper,.rock,.scissors,.holding{
+                width: 8.5rem;
+                height: 8.5rem;
+                padding: 1rem;
+                div{
+                    width: 6.5rem;
+                    height: 6.5rem;
+                }
+
+            }
+        }
+
+    }
+}
+//--------------------------------------------------
+@include small{
+    main{
+        .sec-2{
+            display: grid;
+            grid-template-columns: 45% 45%;
+            grid-template-rows: 50% 50%;
+            gap: 3rem;
+            row-gap: 3rem;
+            .your-pick,.house-pick{
+                flex-direction: column-reverse;
+                width: 100%;
+                h2{
+                    font-size: 1.1rem;
+                }
+            }
+            .your-pick{
+                grid-column: 1;
+                grid-row: 1;
+            }
+            .house-pick{
+                grid-column: 2;
+                grid-row: 1;
+            }
+            .status{
+                grid-column: 1 / 3;
+                grid-row: 2;
+                width: 100%;
+            }
+            .paper,.rock,.scissors,.holding{
+                width: 8.5rem;
+                height: 8.5rem;
+                padding: 1rem;
+                div{
+                    width: 6.5rem;
+                    height: 6.5rem;
+                }
+
+            }
+        }
+
+    }
+}
+//---------------------------------------------------------------
+@include meduim {
+    main{
+        width: 70%;
+    }
+}
+
+@keyframes circle{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0.1;
+    }
+}
+@keyframes from-center-paper{
+    0%{
+        transform: translate(85%, 45%);
+    }
+    100%{
+        transform: translate(0,0);
+    }
+}
+
+@keyframes from-center-rock{
+    0%{
+        transform: translate(-85%, 45%);
+    }
+    100%{
+        transform: translate(0,0);
+    }
+}
+@keyframes from-center-scissors{
+    0%{
+        transform: translate(-50%, -95%);
+    }
+    100%{
+        transform: translate(-50%,0%);
+    }
+}
