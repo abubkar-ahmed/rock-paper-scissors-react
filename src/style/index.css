@@ -701,6 +701,11 @@ main .sec-2 .span-2 {
   }
 }
 
+.rules-div {
+  text-align: end;
+  margin-top: 1.2rem;
+}
+
 .rules-div .rules {
   background-color: transparent;
   color: white;
@@ -710,11 +715,6 @@ main .sec-2 .span-2 {
   cursor: pointer;
   font-size: 1rem;
   font-weight: 700;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
 }
 
 .rules-div .full-width {
@@ -791,14 +791,13 @@ main .sec-2 .span-2 {
 }
 
 @media (max-width: 1024px) {
+  .rules-div {
+    text-align: center;
+  }
   .rules-div .rules {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
-    bottom: 1%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
   }
   .rules-div .full-width .ruls-container {
     width: 100%;
