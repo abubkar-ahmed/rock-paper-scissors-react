@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './components/Footer';
 import Header from './components/Header';
 import Main from './components/Main';
 import Rules from './components/Rules';
@@ -14,7 +15,7 @@ function App() {
             <Main />
           </MyContextProvider>
           <Rules />
-          
+          <Footer />
       </div>
   );
 }

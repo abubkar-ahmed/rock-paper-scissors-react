@@ -7,6 +7,11 @@
 body {
     background: linear-gradient(180deg, #1f3756 50%, #141539 100%);
     min-height: 100vh;
-    padding: 2rem ;
+    padding: 2rem 2rem 0 2rem ;
     font-family: 'Barlow Semi Condensed', sans-serif;
+}
+.App{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
